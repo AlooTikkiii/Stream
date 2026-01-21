@@ -4,7 +4,7 @@ from .protocol import FrameHeader
 def decode_frame(
         header: FrameHeader,
         img_bytes: bytes
-    ) -> np.ndarray
+    ) -> np.ndarray:
     """
     Convert raw payload to a decoded RGB image frame.
 
@@ -24,4 +24,3 @@ def decode_frame(
             f"(received {len(img_bytes)} bytes)"
         )
     return frame
-b

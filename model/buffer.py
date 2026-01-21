@@ -31,7 +31,7 @@ class FrameBuffer:
         ) -> None:
         """Insert frame and check if stereo pair can be processed."""
 
-        ts = meta.timestamp
+        ts = meta.meta_value
         with self.lock:
             if ts not in self.buffer:
                 self.buffer[ts] = {"left": None, "right": None, "arrival_time": time.time()}

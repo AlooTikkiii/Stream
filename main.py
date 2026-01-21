@@ -1,21 +1,22 @@
-from stream.server import StreamServer
-from stream.buffer import FrameBuffer
+from model.server import StreamServer
+from model.buffer import FrameBuffer
 import cv2
 import time
 
 
 def handle_stereo_pair(left_frame, right_frame, timestamp):
     # Display two frames side by side (convert RGB → BGR for display)
-    left_bgr = cv2.cvtColor(left_frame, cv2.COLOR_RGB2BGR)
-    right_bgr = cv2.cvtColor(right_frame, cv2.COLOR_RGB2BGR)
-    combined = cv2.hconcat([left_bgr, right_bgr])
+    # left_bgr = cv2.cvtColor(left_frame, cv2.COLOR_RGB2BGR)
+    # right_bgr = cv2.cvtColor(right_frame, cv2.COLOR_RGB2BGR)
+    # combined = cv2.hconcat([left_bgr, right_bgr])
     
-    cv2.imshow(f"Stereo {timestamp}", combined)
+    # cv2.imshow(f"Stereo", combined)
 
-    if cv2.waitKey(1) == 27:  # ESC to exit
-        print("ESC pressed. Stopping server...")
-        server.stop()
-        cv2.destroyAllWindows()
+    # if cv2.waitKey(1) == 27:  # ESC to exit
+    #     print("ESC pressed. Stopping server...")
+    #     server.stop()
+    #     cv2.destroyAllWindows()
+    pass
 
 
 # Create buffer first, then server so callback can reference it
