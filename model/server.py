@@ -105,7 +105,7 @@ class StreamServer:
         elapsed = time.time() - self.start_time
         fps_left = self.left_count / elapsed
         fps_right = self.right_count / elapsed
-        logger.info(f"FPS - Left: {fps_left:.2f}, Right: {fps_right:.2f}")
+        logger.critical(f"FPS - Left: {fps_left:.2f}, Right: {fps_right:.2f}")
 
         if abs(fps_left - fps_right) > 0.5:
             logger.warning("Significant FPS difference between eyes detected.")
